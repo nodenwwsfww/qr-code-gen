@@ -1,0 +1,12 @@
+.text-click-on-qr {
+    position: absolute;
+    width: auto;
+    top: 340px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-table;
+    color: #FFEB3B;
+    font-weight: 700;
+    font-size: 18px;
+}

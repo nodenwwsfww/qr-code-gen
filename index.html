@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code is a beautifully designed Progressive Web Application to generate QR Codes form Text.">
+    <meta name="keywords" content="qr,pwa,progressive,web,apps,material,design,awesome,palette,code,generator,qr code">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code | QR Generator</title>
+
+    <script src="functions/jquery.min.js"></script>
+    <script src="functions/easy.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="functions/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="functions/index.js"></script>
+    <script type="text/javascript" src='functions/locale.js'></script>
+
+    <link rel="stylesheet" href="styles/index.min.css">
+    <meta name="theme-color" content="#191919" />
+    <link rel="manifest" href="functions/manifest.json">
+    <link rel="stylesheet" href="styles/font.css" >
+    <link rel="stylesheet" href="styles/extra.css">
+    <link href="assets/favicon.ico" rel="icon" sizes="192x192">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/favicon.ico">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <a href="javascript:window.location.reload();">
+            <img src="assets/512x512.png" alt="all-logo" class="app-logo">
+            <h1 class="app-title" data-i18n-key="app-title">Code QR</h1>
+        </a>
+        <div class="input-elements">
+            <div class="input-bar">
+                <input type="text" class="qrText" id="qr-text" data-i18n-key="action-qr-text-placeholder" placeholder="Type Text or URL">
+                <button type="submit" id="generate-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="#191919" d="M3,11H5V13H3V11M11,5H13V9H11V5M9,11H13V15H11V13H9V11M15,11H17V13H19V11H21V13H19V15H21V19H19V21H17V19H13V21H11V17H15V15H17V13H15V11M19,19V15H17V19H19M15,3H21V9H15V3M17,5V7H19V5H17M3,3H9V9H3V3M5,5V7H7V5H5M3,15H9V21H3V15M5,17V19H7V17H5Z" />
+                    </svg>
+                </button>
+            </div>
+            <a href="" download="QR-Code" class="downloadCode">
+                <div id="qrcode"></div>
+                <p class="text-click-on-qr" style="display: none" data-i18n-key="action-tap-on-qr-to-download">Tap on QR Code to Download</p>
+            </a>
+
+        </div>
+        <select data-i18n-switcher class="locale-switcher">
+            <option value="en">English</option>
+            <option value="ru">Russian (Русский)</option>
+            <option value="tr">Turkish (Türkçe)</option>
+        </select>
+    </div>
+</body>
+
+<script src="service-worker.js">
+</script>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('service-worker.js')
+            .then(function() {
+                console.log("Service-Worker-Registered");
+            });
+    }
+</script>
+
+</html>

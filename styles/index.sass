@@ -1,0 +1,105 @@
+// -------------imports--------------------
+@import 'shadows','center-mixins'
+
+*
+    margin: 0
+    padding: 0
+    font-family: 'Google Sans'
+    cursor: default
+    user-select: none
+
+body
+    background: #191919
+
+    .wrapper
+        height: calc(100vh - 48px)
+        padding: 24px
+        overflow: hidden
+        h1.app-title
+            position: fixed
+            font-size: 20px
+            color: #E91E63
+            font-weight: 700
+            display: inline-block
+            margin-left: 52px
+            letter-spacing: 2px
+            line-height: 40px
+
+        img.app-logo
+            position: fixed
+            width: 40px
+            height: 40px
+            float: left
+        .input-elements
+            @include centered-y
+            max-width: 344px
+            margin: 0px auto
+            display: block
+            .input-bar
+                width: 100%
+                max-width: 48px
+                position: relative
+                border-radius: 50px
+                box-shadow: 0 0 50px 10px #E91E63
+                overflow: hidden
+                transition: all 255ms ease-out 455ms,transform 255ms ease-out
+                z-index: 1
+                margin: 0 auto
+                transform: scale(3)
+                input.qrText
+                    background: #fff
+                    width: 100%
+                    height: 48px
+                    border: 0
+                    outline: 0
+                    border-radius: 50px
+                    box-sizing: border-box
+                    padding-left: 20px
+                    padding-right: 56px
+                    color: #E91E63
+                    font-size: 14px
+
+                button#generate-btn
+                    @include centered-y
+                    transform: translateY(-50%) rotate(0deg)
+                    position: absolute
+                    right: 0
+                    border-radius: 50px
+                    background: #FFEB3B
+                    border: 0
+                    outline: 0
+                    box-shadow: $box-shadow-4dp
+                    font-size: 14px
+                    padding: 4px
+                    z-index: 1
+                    transition: transform 255ms ease-in-out
+                    svg
+                        float: left
+                        padding: 8px
+                        width: 24px
+                        height: 24px
+
+            .load
+                max-width: 344px !important
+                transform: scale(1)
+                button
+                    transform: translateY(-50%) rotate(360deg) !important
+            #qrcode
+                width: 240px
+                height: 240px
+                box-shadow: $box-shadow-2dp
+                background: #fff
+                display: none
+                padding: 15px
+                box-sizing: border-box
+                margin: 30px auto
+                border: 5px solid #FFEB3B
+                border-radius: 20px
+                &::after
+                    position: absolute
+                    width: auto
+                    top: 340px
+                    text-align: center
+                    left: 50%
+                    transform: translateX(-50%)
+                    display: inline-table
