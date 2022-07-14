@@ -1,4 +1,6 @@
 $(function() {
+
+
     function makeCode () {
         if ($('.qrText').val() != '') {
             var elText = document.getElementById("qr-text");
@@ -46,5 +48,16 @@ $(function() {
         $('#qrcode').empty();
         document.querySelector('.qrText').value = '';
     };
+    document.addEventListener("DOMContentLoaded", () => {
+        YaGames
+            .init()
+            .then(ysdk => {
+                console.log('Yandex SDK initialized');
+                window.ysdk = ysdk;
+
+                setLocale(ysdk.environment.i18n.lang);
+                console.log('Set locale', ysdk.environment.i18n.lang)
+            });
+    });
 
 });

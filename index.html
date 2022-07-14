@@ -7,13 +7,18 @@
     <meta name="description" content="Code is a beautifully designed Progressive Web Application to generate QR Codes form Text.">
     <meta name="keywords" content="qr,pwa,progressive,web,apps,material,design,awesome,palette,code,generator,qr code">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Code | QR Generator</title>
 
     <script src="functions/jquery.min.js"></script>
     <script src="functions/easy.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Yandex Games SDK -->
+    <script src="https://yandex.ru/games/sdk/v2"></script>
+
     <script type="text/javascript" src="functions/jquery.qrcode.min.js"></script>
-    <script type="text/javascript" src="functions/index.js"></script>
     <script type="text/javascript" src='functions/locale.js'></script>
+    <script type="text/javascript" src="functions/index.js"></script>
 
     <link rel="stylesheet" href="styles/index.min.css">
     <meta name="theme-color" content="#191919" />
@@ -27,7 +32,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="root">
         <a href="javascript:window.location.reload();">
             <img src="assets/512x512.png" alt="all-logo" class="app-logo">
             <h1 class="app-title" data-i18n-key="app-title">Code QR</h1>
@@ -47,11 +52,7 @@
             </a>
 
         </div>
-        <select data-i18n-switcher class="locale-switcher">
-            <option value="en">English</option>
-            <option value="ru">Russian (Русский)</option>
-            <option value="tr">Turkish (Türkçe)</option>
-        </select>
+        <select data-i18n-switcher class="locale-switcher" style="display: none"></select>
     </div>
 </body>
 
